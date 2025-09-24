@@ -7,8 +7,6 @@ void	ft_bzero(void *s, unsigned long n)
 	unsigned	char		*a = (unsigned char *)s;	
 
 	i = 0;
-	if (n == 0)
-		return;
 	while (i < n)
 	{
 	a[i] = '\0';
