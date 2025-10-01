@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include <string.h>
 
 int	ft_memcmp(void *dest, void *source, size_t n)
 {

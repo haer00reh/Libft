@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include <string.h>
 
 void	*ft_memccpy(void *dest, void *source, int c, size_t n)
 {

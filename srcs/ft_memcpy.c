@@ -1,4 +1,5 @@
-#include <stddef.h>
+#include <string.h>
+
 void	*ft_memcpy(void *dest, void *source, size_t n)
 {
 	unsigned	char	*a = (unsigned char *)dest;
