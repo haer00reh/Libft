@@ -1,8 +1,9 @@
-void	*ft_memcpy(void *dest, void *source, unsigned long n)
+#include <stddef.h>
+void	*ft_memcpy(void *dest, void *source, size_t n)
 {
 	unsigned	char	*a = (unsigned char *)dest;
 	unsigned	char	*b = (unsigned char *)source;
-	unsigned	long	i;
+	size_t			i;
 
 	i = 0;
 	while (i < n)

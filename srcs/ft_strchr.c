@@ -1,3 +1,5 @@
+#include <string.h>
+
 char	*ft_strchr(char *str, char c)
 {
 	while (*str)
@@ -8,5 +10,5 @@ char	*ft_strchr(char *str, char c)
 	}
 	if (c == '\0')
 		return (str);
-	return (0);
+	return (NULL);
 }

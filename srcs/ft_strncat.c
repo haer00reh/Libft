@@ -1,10 +1,9 @@
-#include <stdio.h>
+#include <string.h>
 
+char	*ft_strncat(char *dest, char *src, size_t n){
 
-char	*ft_strncat(char *dest, char *src, unsigned int n){
-
-	unsigned int i;
-	unsigned int j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;

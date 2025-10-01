@@ -1,8 +1,10 @@
-void	*ft_memmove(void *dest, void *source, unsigned long n)
+#include <string.h>
+
+void	*ft_memmove(void *dest, void *source, size_t n)
 {
 	unsigned	char	*a = (unsigned char *)dest;
 	unsigned	char	*b = (unsigned char *)source;
-	unsigned	long	i;
+	size_t			i;
 
 	if (a < b)
 	{

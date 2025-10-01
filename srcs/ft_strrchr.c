@@ -1,3 +1,4 @@
+#include <string.h>
 
 int	ft_strlen(char *str)
 {
@@ -23,5 +24,5 @@ char	*ft_strrchr(char *str, int c)
 			return (&str[i]);
 	i--;
 	}
-	return (0);
+	return (NULL);
 }

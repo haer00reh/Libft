@@ -1,9 +1,8 @@
-#include <stdio.h>
 #include <string.h>
 
-void	ft_bzero(void *s, unsigned long n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned	long		i;
+	size_t		i;
 	unsigned	char		*a = (unsigned char *)s;	
 
 	i = 0;

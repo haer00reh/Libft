@@ -1,6 +1,8 @@
-void	*ft_memset(void	*ptr, int c, unsigned	long n)
+#include <string.h>
+
+void	*ft_memset(void	*ptr, int c, size_t n)
 {
-	unsigned	long	i;
+	size_t	i;
 	unsigned 	char *p = (unsigned char *)ptr;
 	unsigned 	char val;
 

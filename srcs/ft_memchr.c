@@ -1,6 +1,8 @@
-void	*ft_memchr(void *ptr, int c, unsigned long n)
+#include <stddef.h>
+
+void	*ft_memchr(void *ptr, int c, size_t n)
 {
-	unsigned	long	i;
+	size_t		i;
 	unsigned 	char *p = (unsigned char *)ptr;
 	unsigned 	char val = (unsigned char)c;
 
@@ -12,5 +14,5 @@ void	*ft_memchr(void *ptr, int c, unsigned long n)
 	i++;
 	}
 
-	return (0);
+	return (NULL);
 }

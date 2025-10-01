@@ -1,6 +1,8 @@
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+#include <string.h>
+
+char	*ft_strncpy(char *dest, char *src, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (src[i] && i < n)

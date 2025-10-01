@@ -1,6 +1,8 @@
-int	ft_strncmp(char *str1, char *str2, unsigned int n)
+#include <string.h>
+
+int	ft_strncmp(char *str1, char *str2, size_t n)
 {
-	unsigned	int i;
+	size_t	i;
 
 	i = 0;
 	if (n == 0)

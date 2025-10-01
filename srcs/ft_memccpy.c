@@ -1,10 +1,13 @@
-void	*ft_memccpy(void *dest, void *source, int c, unsigned long n)
+#include <stddef.h>
+
+void	*ft_memccpy(void *dest, void *source, int c, size_t n)
 {
 	unsigned	char		*a = (unsigned char *)dest;
 	unsigned	char		*b = (unsigned char *)source;	
 	unsigned	char		val = (unsigned char)c;
-	unsigned 	long		i = 0;
-
+	size_t				i;
+	
+	i = 0;
 	while (i < n)
 	{
 		a[i] = b[i];
@@ -13,5 +16,5 @@ void	*ft_memccpy(void *dest, void *source, int c, unsigned long n)
 	i++;
 	}
 
-	return (0);
+	return (NULL);
 }
