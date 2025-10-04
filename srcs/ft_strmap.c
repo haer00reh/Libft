@@ -15,6 +15,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*coffee = NULL;
 	int	i;
 
+	if (!s || !f)
+		return (NULL);
 	coffee = (char *) malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!coffee)
 		return (NULL);

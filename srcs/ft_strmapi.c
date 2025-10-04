@@ -1,0 +1,31 @@
+#include <stdlib.h>
+
+int	ft_strlen(char const *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char		*coffee = NULL;
+	unsigned	int	i;
+
+	if (!s || !f)
+		return (NULL);
+	coffee = (char *) malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!coffee)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+	coffee[i] = (*f)(i, s[i]);
+	i++;
+	}
+	coffee[i] = '\0';
+	return (coffee);
+}
