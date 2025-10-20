@@ -1,9 +1,10 @@
+#include "libft.h"
 #include <string.h>
 
-void	*ft_memccpy(void *dest, void *source, int c, size_t n)
+void	*ft_memccpy(void *dest, const void *source, int c, size_t n)
 {
 	unsigned	char		*a = (unsigned char *)dest;
-	unsigned	char		*b = (unsigned char *)source;	
+	const unsigned	char	*b = (const unsigned char *)source;	
 	unsigned	char		val = (unsigned char)c;
 	size_t				i;
 	

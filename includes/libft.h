@@ -52,5 +52,22 @@ int					ft_lstsize(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				*ft_memalloc(size_t size);
+void				*ft_memccpy(void *dest, const void *source, int c, size_t n);
+void				ft_memdel(void **ap);
+char				*ft_strcat(char *dest, const char *src);
+void				ft_strclr(char *str);
+int					ft_strcmp(const char *s1, const char *s2);
+char				*ft_strcpy(char *dest, const char *src);
+void				ft_strdel(char **as);
+int					ft_strequ(char const *s1, char const *s2);
+void				ft_striter(char *str, void (*f) (char *));
+char				*ft_strmap(char const *s, char (*f)(char));
+char				*ft_strncat(char *dest, const char *src, size_t n);
+char				*ft_strncpy(char *dest, const char *src, size_t n);
+int					ft_strnequ(char const *s1, char const *s2, size_t n);
+char				*ft_strnew(size_t size);
+char				*ft_strstr(const char *str, const char *to_find);
+char				*ft_strsub(char const *s, unsigned int start, size_t len);
 
 #endif

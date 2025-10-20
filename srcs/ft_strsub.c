@@ -1,10 +1,10 @@
+#include "libft.h"
 #include <stdlib.h>
 
 char  *ft_strsub(char const *s, unsigned int start, size_t len)
 {
-  size_t  size;
   char  *str;
-  int   i;
+  size_t   i;
 
   str = (char *)malloc(sizeof(char) * (len + 1));
     if (!str)
