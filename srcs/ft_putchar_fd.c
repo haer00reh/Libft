@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haer-reh <haer-reh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:44:10 by haer-reh          #+#    #+#             */
-/*   Updated: 2025/10/16 11:31:23 by haer-reh         ###   ########.fr       */
+/*   Created: 2025/10/16 13:03:43 by haer-reh          #+#    #+#             */
+/*   Updated: 2025/10/16 13:39:01 by haer-reh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-int	ft_isalnum(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned char	chr;
-
-	chr = (unsigned char)c;
-	if ((chr >= 'a' && chr <= 'z') || (chr >= 'A' && chr <= 'Z') || (chr >= '0'
-			&& chr <= '9'))
-		return (1);
-	else
-		return (0);
+	write(fd, &c, 1);
 }

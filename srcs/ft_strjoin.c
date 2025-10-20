@@ -1,39 +1,38 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haer-reh <haer-reh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/15 09:17:58 by haer-reh          #+#    #+#             */
+/*   Updated: 2025/10/16 15:09:02 by haer-reh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_strlen(char const *s)
+#include "libft.h"
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-  int i;
+	unsigned int	len;
+	char			*str;
 
-  i = 0;
-  while (s[i])
-    i++;
-  return (i);
-}
-
-char  *ft_strjoin(char const *s1, char const *s2)
-{
-  int   len;
-  char  *str;
-  int   i;
-
-  len = ft_strlen(s1);
-  len += ft_strlen(s2);
-  str = (char *) malloc(sizeof(char) * (len + 1));
-    if (!str)
-      return (NULL);
-  str[len] = '\0';
-  i = 0;
-  while (*s1)
-  {
-    str[i] = *s1;
-    i++;
-    s1++;
-  }
-  while (*s2)
-  {
-    str[i] = *s2;
-    i++;
-    s2++;
-  }
-  return (str);
+	len = ft_strlen((char *)s1);
+	len += ft_strlen((char *)s2);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	str[len] = '\0';
+	len = 0;
+	while (*s1)
+	{
+		str[len] = *s1;
+		s1++;
+		len++;
+	}
+	while (*s2)
+	{
+		str[len] = *s2;
+		s2++;
+		len++;
+	}
+	return (str);
 }

@@ -1,9 +1,20 @@
-int	ft_toupper(int character)
-{
-	unsigned	char	chr = (unsigned char)character;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haer-reh <haer-reh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/14 16:39:44 by haer-reh          #+#    #+#             */
+/*   Updated: 2025/10/16 11:24:45 by haer-reh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	if (chr >= 'a' && chr <= 'z')
-		return (chr - 32);
-	else
-	 	return (chr);
+#include "libft.h"
+
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

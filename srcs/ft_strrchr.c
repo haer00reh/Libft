@@ -1,28 +1,31 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haer-reh <haer-reh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/14 17:01:31 by haer-reh          #+#    #+#             */
+/*   Updated: 2025/10/16 15:48:41 by haer-reh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
-	return (i);
-}
-
-char	*ft_strrchr(char *str, int c)
-{
-	unsigned	char ch = (unsigned char)c;
-	int		i;
-
-	i = ft_strlen(str);
-
-	while (i >= 0)
+	while (i)
 	{
-
-		if (str[i] == ch)
-			return (&str[i]);
-	i--;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i--;
 	}
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
 	return (NULL);
 }

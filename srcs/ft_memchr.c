@@ -1,18 +1,31 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haer-reh <haer-reh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/14 17:14:44 by haer-reh          #+#    #+#             */
+/*   Updated: 2025/10/16 11:25:23 by haer-reh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	*ft_memchr(void *ptr, int c, size_t n)
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t		i;
-	unsigned 	char *p = (unsigned char *)ptr;
-	unsigned 	char val = (unsigned char)c;
+	unsigned char	*set;
+	unsigned char	chr;
+	size_t			i;
 
+	chr = (unsigned char)c;
+	set = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
-		if (p[i] == val)
-			return ((void *)&p[i]);
-	i++;
+		if (set[i] == chr)
+			return (&set[i]);
+		i++;
 	}
-
 	return (NULL);
 }

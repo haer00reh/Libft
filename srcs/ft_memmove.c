@@ -1,27 +1,41 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haer-reh <haer-reh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 18:17:14 by haer-reh          #+#    #+#             */
+/*   Updated: 2025/10/16 11:22:51 by haer-reh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	*ft_memmove(void *dest, void *source, size_t n)
+#include "libft.h"
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned	char	*a = (unsigned char *)dest;
-	unsigned	char	*b = (unsigned char *)source;
-	size_t			i;
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
 
-	if (a < b)
+	s = (unsigned char *)src;
+	d = (unsigned char *)dest;
+	if (s > d)
 	{
-	i = 0;
+		i = 0;
 		while (i < n)
 		{
-		a[i] = b[i];
-		i++;
+			d[i] = s[i];
+			i++;
 		}
 	}
-	else if (a > b)
+	else if (d > s)
 	{
-	i = n;
+		i = n;
 		while (i > 0)
 		{
-		a[i - 1] = b[i - 1];
-		i--;
+			d[i - 1] = s[i - 1];
+			i--;
 		}
 	}
 	return (dest);

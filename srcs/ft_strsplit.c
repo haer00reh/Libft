@@ -1,59 +1,77 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haer-reh <haer-reh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/15 10:18:51 by haer-reh          #+#    #+#             */
+/*   Updated: 2025/10/16 11:24:27 by haer-reh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int count_words(char const *s, char c)
+#include "libft.h"
+
+static int	ft_count_words(const char *s, char c)
 {
-  int i;
-  int count;
-  
-  i = 0;
-  count = 0;
-  while (s[i])
-  {
-    while (s[i] && s[i] == c)
-      i++;
-    if (s[i])
-     count++;
-      while (s[i] && s[i] != c)
-      i++;
-  }
-  return (count);
+	int	i;
+	int	words;
+
+	words = 0;
+	i = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i])
+			words++;
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	return (words);
 }
-char  **ft_strsplit(char const *s, char c)
-{
-  int  words;
-  char  **strset;
-  int   i;
-  int   len;
-  int   j;
-  int   k;
 
-  words = count_words(s, c);
-  strset = (char **) malloc(sizeof(char *) * (words + 1));
-    if (!strset)
-      return (NULL);
-  i = 0;
-  j = 0;
-  while (i < words)
-  {
-    while (s[j] && s[j] == c)
-      j++;
-    len = 0;
-    while (s[j + len] && s[j + len] != c)
-      len++;
-    strset[i] = (char *) malloc(sizeof(char) * (len + 1));
-      if (!strset[i])
-        return (NULL);
-    k = 0;
-    while (k < len)
-    {
-      strset[i][k] = s[j + k];
-      k++;
-    }
-    strset[i][k] = '\0';
-    j += len;
-    i++;
-  }
-  strset[i] = NULL;
-  return (strset);
+static char	*copy_word(const char *str, int len)
+{
+	char	*s;
+	int		i;
+
+	s = (char *)malloc(sizeof(char) * (len + 1));
+	s[len] = '\0';
+	i = 0;
+	while (i < len)
+	{
+		s[i] = str[i];
+		i++;
+	}
+	return (s);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**str_set;
+	int		i;
+	int		len;
+
+	str_set = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!str_set)
+		return (NULL);
+	i = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (!*s)
+			break ;
+		len = 0;
+		while (s[len] && s[len] != c)
+			len++;
+		str_set[i] = copy_word(s, len);
+		if (!str_set[i])
+			return (NULL);
+		s += len;
+		i++;
+	}
+	str_set[i] = NULL;
+	return (str_set);
 }

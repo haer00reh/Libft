@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haer-reh <haer-reh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:44:10 by haer-reh          #+#    #+#             */
-/*   Updated: 2025/10/16 11:31:23 by haer-reh         ###   ########.fr       */
+/*   Created: 2025/10/14 18:51:02 by haer-reh          #+#    #+#             */
+/*   Updated: 2025/10/20 15:26:34 by haer-reh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char	chr;
+	void	*ptr;
 
-	chr = (unsigned char)c;
-	if ((chr >= 'a' && chr <= 'z') || (chr >= 'A' && chr <= 'Z') || (chr >= '0'
-			&& chr <= '9'))
-		return (1);
-	else
-		return (0);
+	if (size != 0 && nmemb > __SIZE_MAX__ / size)
+		return (NULL);
+	if (nmemb == 0 || size == 0)
+	{
+		ptr = malloc(1);
+		if (!ptr)
+			return (NULL);
+		return (ptr);
+	}
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, size * nmemb);
+	return (ptr);
 }

@@ -1,14 +1,27 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haer-reh <haer-reh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 17:13:54 by haer-reh          #+#    #+#             */
+/*   Updated: 2025/10/16 11:25:00 by haer-reh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t		i;
-	unsigned	char		*a = (unsigned char *)s;	
+	unsigned char	*set;
+	size_t			i;
 
 	i = 0;
+	set = (unsigned char *)s;
 	while (i < n)
 	{
-	a[i] = '\0';
-	i++;
+		set[i] = '\0';
+		i++;
 	}
 }

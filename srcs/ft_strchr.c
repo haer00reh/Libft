@@ -1,14 +1,29 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haer-reh <haer-reh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/14 16:51:44 by haer-reh          #+#    #+#             */
+/*   Updated: 2025/10/16 15:47:10 by haer-reh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_strchr(char *str, char c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-	while (*str)
+	size_t	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*str == c)
-			return (str);
-	str++;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
 	}
-	if (c == '\0')
-		return (str);
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
 	return (NULL);
 }

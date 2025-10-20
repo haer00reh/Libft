@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haer-reh <haer-reh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:44:10 by haer-reh          #+#    #+#             */
-/*   Updated: 2025/10/16 11:31:23 by haer-reh         ###   ########.fr       */
+/*   Created: 2025/10/18 10:48:50 by haer-reh          #+#    #+#             */
+/*   Updated: 2025/10/18 11:17:20 by haer-reh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+t_list	*ft_lstnew(void	*content)
 {
-	unsigned char	chr;
+	t_list	*new;
 
-	chr = (unsigned char)c;
-	if ((chr >= 'a' && chr <= 'z') || (chr >= 'A' && chr <= 'Z') || (chr >= '0'
-			&& chr <= '9'))
-		return (1);
-	else
-		return (0);
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }
